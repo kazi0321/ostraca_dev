@@ -12,7 +12,7 @@ node {
     stage('terraform'){
         dir("${tf_path}"){
       sh "sh destroy.sh"
-      sh "${terraform} apply -auto-approve -var "target_arn =a" "
+      sh "${terraform} apply -auto-approve -var target_arn =a "
       sh "echo [server1]" > ${ansible_path}/hosts"
       sh "terraform state show aws_instance.server1 | grep public_dns | awk '{print $3}' >> ${ansible_path}/hosts"
     }
@@ -28,7 +28,7 @@ node {
 
   stage('terraform'){
         dir("${tf_path}"){
-        sh "${terraform} apply -auto-approve -var "target_arn =b" "
+        sh "${terraform} apply -auto-approve -var target_arn =b "
     }
   }
 
