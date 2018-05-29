@@ -19,10 +19,15 @@ node {
     }
   }
 
-  stage('ansible'){
+  stage('wget'){
       dir("${ansible_path}"){
     sh "rm -rf ostraca.yml"
     sh "wget https://raw.githubusercontent.com/kazi0321/ostraca_dev/master/playbook/ostraca.yml"
+  }
+  }
+
+  stage('ansible'){
+      dir("${ansible_path}"){
     sh "ansible-playbook -i hosts ostraca.yml --private-key=~/.ssh/kaziken.pem"
   }
   }
