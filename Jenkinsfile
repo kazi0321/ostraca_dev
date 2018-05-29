@@ -25,12 +25,12 @@ node {
     sh "wget https://raw.githubusercontent.com/kazi0321/ostraca_dev/master/playbook/ostraca.yml"
     sh "ansible-playbook -i hosts ostraca.yml --private-key=~/.ssh/kaziken.pem"
   }
-}
+  }
+
 
   stage('terraform'){
         dir("${tf_path}"){
         sh "${terraform} apply -auto-approve -var target_arn =b "
     }
   }
-
 }
