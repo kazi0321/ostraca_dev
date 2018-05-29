@@ -36,7 +36,7 @@ node {
 
   stage('terraform'){
         dir("${tf_path}"){
-        sh "${terraform} apply -auto-approve -var target_arn =b "
+        sh "${terraform} apply -auto-approve -var \"target_arn =b\" "
     }
   }
 }
