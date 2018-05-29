@@ -15,7 +15,7 @@ node {
       sh "sh destroy.sh"
       sh "${terraform} apply -auto-approve -var \"target_arn =a\" "
       sh "echo [server1] > ${ansible_path}/hosts"
-      sh "terraform state show aws_instance.server1 | grep public_dns | awk '{print ${awk_op}}' >> ${ansible_path}/hosts"
+      sh "${terraform} state show aws_instance.server1 | grep public_dns | awk '{print ${awk_op}}' >> ${ansible_path}/hosts"
     }
   }
 
