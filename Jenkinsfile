@@ -2,6 +2,7 @@ def jenkins_path= "/var/lib/jenkins"
 def tf_path = "${jenkins_path}/terraform"
 def terraform = "/usr/local/bin/terraform"
 def ansible_path = "${jenkins_path}/ansible"
+def awk_op = "\$3"
 
 node {
 
@@ -14,7 +15,7 @@ node {
       sh "sh destroy.sh"
       sh "${terraform} apply -auto-approve -var target_arn =a "
       sh "echo [server1] > ${ansible_path}/hosts"
-      sh "terraform state show aws_instance.server1 | grep public_dns | awk '{print $3}' >> ${ansible_path}/hosts"
+      sh "terraform state show aws_instance.server1 | grep public_dns | awk '{print ${awk_op}}' >> ${ansible_path}/hosts"
     }
   }
 
