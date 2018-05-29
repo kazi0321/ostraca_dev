@@ -1,10 +1,11 @@
 - hosts: all
-  user: root
+  user: ec2-user
+  sudo: yes
   tasks:
     - name: install Apache
       yum: name=httpd state=latest
 
-    - copy: src=../sources/index.html dest=/var/www/html/ owner=ec2-user group=ec2-user
+    - copy: src=./index.html dest=/var/www/html/ owner=ec2-user group=ec2-user
 
     - name: enable & start service httpd
       systemd: name=httpd state=started enabled=true
