@@ -24,7 +24,7 @@ node {
     sh "rm -rf ostraca.yml"
     sh "rm -rf index.html"
     sh "wget https://raw.githubusercontent.com/kazi0321/ostraca_dev/master/playbook/ostraca.yml"
-    sh "wget https://raw.githubusercontent.com/kazi0321/ostraca_dev/master/sources/index.html"
+    sh "wget https://raw.githubusercontent.com/kazi0321/ostraca_dev/master/sources"
   }
   }
 
