@@ -26,7 +26,7 @@ node {
     sh "wget https://raw.githubusercontent.com/kazi0321/ostraca_dev/master/playbook/ostraca.yml"
     sh "wget https://raw.githubusercontent.com/kazi0321/ostraca_dev/master/sources/index.html"
     sh "wget https://raw.githubusercontent.com/kazi0321/ostraca_dev/master/sources/logo.png"
-    sh "wget https://raw.githubusercontent.com/kazi0321/ostraca_dev/master/sources/logo2.png"
+    sh "wget https://raw.githubusercontent.com/kazi0321/ostraca_dev/master/sources/logo2.jpg"
   }
   }
 
