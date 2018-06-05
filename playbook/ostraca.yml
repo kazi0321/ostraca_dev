@@ -9,5 +9,7 @@
 
     - copy: src=./logo.png dest=/var/www/html/ owner=ec2-user group=ec2-user
 
+    - copy: src=./logo2.png dest=/var/www/html/ owner=ec2-user group=ec2-user
+
     - name: enable & start service httpd
       systemd: name=httpd state=started enabled=true
